@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>登录 / 注册 · 蓝屿手记</title>
+<meta name="description" content="注册或登录本站账号。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://api.github.com; frame-src https://music.163.com https://y.qq.com https://music.qq.com https://i.y.qq.com; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#050d22">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+</div>
+
+<header class="site-header">
+  <div class="container nav-bar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <span data-site-name>蓝屿手记</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="blog.html">文章</a>
+      <a href="downloads.html">下载专区</a>
+      <a href="login.html" class="is-active" data-user-entry>登录</a>
+      <a href="admin.html" class="btn btn-ghost btn-sm">管理端</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="auth-wrap">
+    <section class="auth-card glass" id="authCard">
+      <h1>欢迎回来</h1>
+      <p class="auth-sub">登录后可在本设备保留你的阅读身份。</p>
+
+      <div class="tabs" role="tablist">
+        <button class="tab is-on" type="button" id="tabLogin" role="tab" aria-selected="true">登录</button>
+        <button class="tab" type="button" id="tabRegister" role="tab" aria-selected="false">注册</button>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="loginEmail">邮箱</label>
+          <input type="email" id="loginEmail" autocomplete="username" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="loginPassword">密码</label>
+          <input type="password" id="loginPassword" autocomplete="current-password" placeholder="至少 8 位" required>
+        </div>
+        <p class="form-msg" id="loginMsg" role="status"></p>
+        <button class="btn btn-primary btn-block" type="submit">登录</button>
+      </form>
+
+      <form id="registerForm" novalidate hidden>
+        <div class="field">
+          <label for="regEmail">邮箱</label>
+          <input type="email" id="regEmail" autocomplete="username" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="regPassword">设置密码</label>
+          <input type="password" id="regPassword" autocomplete="new-password" placeholder="至少 8 位" required>
+        </div>
+        <div class="field">
+          <label for="regConfirm">确认密码</label>
+          <input type="password" id="regConfirm" autocomplete="new-password" placeholder="再输入一次" required>
+        </div>
+        <p class="form-msg" id="registerMsg" role="status"></p>
+        <button class="btn btn-primary btn-block" type="submit">创建账号</button>
+      </form>
+
+      <div class="notice notice-warn" style="margin-top:22px">
+        说明：本站为纯静态部署，没有服务器。账号只保存在当前浏览器的本地存储中（密码经 PBKDF2 加盐哈希），
+        不会上传到任何服务器，也不支持跨设备同步。管理员身份使用独立的 GitHub 令牌登录，与之无关。
+      </div>
+    </section>
+
+    <section class="auth-card glass" id="userCard" hidden>
+      <h1>已登录</h1>
+      <p class="auth-sub">这里是当前设备上的账号状态。</p>
+      <div class="user-panel">
+        <span class="avatar" id="userAvatar">U</span>
+        <div>
+          <div id="userEmail" style="font-weight:600"></div>
+          <div style="font-size:.78rem;color:var(--ink-mute)" id="userSince"></div>
+        </div>
+      </div>
+      <div class="form-row" style="margin-top:22px">
+        <button class="btn btn-ghost" type="button" id="logoutBtn">退出登录</button>
+        <button class="btn btn-danger" type="button" id="removeBtn">删除本机账号</button>
+      </div>
+      <p class="form-msg" id="userMsg" role="status"></p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span data-footer>以静态之力，行长期之事。</span>
+    <div class="footer-links" data-social-list></div>
+    <a href="admin.html">管理端</a>
+  </div>
+</footer>
+
+<script src="assets/js/seed.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/auth.js"></script>
+</body>
+</html>

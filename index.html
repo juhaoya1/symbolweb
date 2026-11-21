@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>蓝屿手记 · 代码、设计与长期主义</title>
+<meta name="description" content="一个部署在 GitHub Pages 上的个人博客：文章、下载专区与图形化管理端，零服务器成本。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://api.github.com; frame-src https://music.163.com https://y.qq.com https://music.qq.com https://i.y.qq.com; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#050d22">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+</div>
+
+<header class="site-header">
+  <div class="container nav-bar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <span data-site-name>蓝屿手记</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="index.html" class="is-active">首页</a>
+      <a href="blog.html">文章</a>
+      <a href="downloads.html">下载专区</a>
+      <a href="login.html" data-user-entry>登录</a>
+      <a href="admin.html" class="btn btn-ghost btn-sm">管理端</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+  <div class="announce" data-announcement hidden></div>
+
+  <section class="hero glass">
+    <span class="hero-eyebrow">Static Blog · GitHub Pages</span>
+    <h1 class="hero-title">在深蓝里<br>写下长期主义</h1>
+    <p class="hero-sub">
+      一个用静态页面搭起来的个人空间：没有服务器账单，没有数据库运维。
+      文章、下载资源与站点设置，都在浏览器里的管理端完成，改完即发布。
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="blog.html">开始阅读</a>
+      <a class="btn btn-ghost" href="downloads.html">进入下载专区</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b id="statPosts">—</b><span>篇文章</span></div>
+      <div class="stat"><b id="statDownloads">—</b><span>个下载资源</span></div>
+      <div class="stat"><b id="statUpdated">—</b><span>最近更新</span></div>
+      <div class="stat"><b>¥0</b><span>年运行成本</span></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="latestTitle">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title" id="latestTitle">最新文章</h2>
+        <p class="section-desc">从工程实践到视觉细节，记录那些值得反复推敲的问题。</p>
+      </div>
+      <a class="section-link" href="blog.html">全部文章 →</a>
+    </div>
+    <div class="grid-3" id="latestPosts">
+      <div class="state-empty">正在读取文章…</div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="dlTitle">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title" id="dlTitle">下载专区</h2>
+        <p class="section-desc">站内文件与外链入口统一管理，凭提取码获取，码可随时重置。</p>
+      </div>
+      <a class="section-link" href="downloads.html">全部资源 →</a>
+    </div>
+    <div class="grid-2" id="latestDownloads">
+      <div class="state-empty">正在读取资源…</div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span data-footer>以静态之力，行长期之事。</span>
+    <div class="footer-links" data-social-list></div>
+    <a href="admin.html">管理端</a>
+  </div>
+</footer>
+
+<script src="assets/js/seed.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>
