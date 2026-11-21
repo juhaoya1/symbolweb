@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文章 · 蓝屿手记</title>
+<meta name="description" content="蓝屿手记的文章列表：工程实践、视觉设计与产品思考。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' https://api.github.com; frame-src https://music.163.com https://y.qq.com https://music.qq.com https://i.y.qq.com; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#050d22">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <span class="blob b3"></span>
+</div>
+
+<header class="site-header">
+  <div class="container nav-bar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">◆</span>
+      <span data-site-name>蓝屿手记</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="blog.html" class="is-active">文章</a>
+      <a href="downloads.html">下载专区</a>
+      <a class="nav-id" href="login.html" data-user-entry aria-label="使用 GitHub 登录">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="container page">
+  <div id="listView">
+    <div class="section-head">
+      <div>
+        <h1 class="section-title">文章</h1>
+        <p class="section-desc">共 <span id="postCount">0</span> 篇，按发布时间倒序排列。</p>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <label class="sr-only" for="searchInput">搜索文章</label>
+      <input type="search" id="searchInput" placeholder="搜索标题、摘要或标签 …" autocomplete="off">
+    </div>
+    <div class="chips" id="tagChips"></div>
+
+    <div class="grid-3" id="postGrid">
+      <div class="state-empty">正在读取文章…</div>
+    </div>
+  </div>
+
+  <article id="detailView" class="article glass" hidden>
+    <div class="article-head">
+      <a class="section-link" href="blog.html">← 返回文章列表</a>
+      <h1 id="articleTitle"></h1>
+      <div class="article-meta">
+        <span id="articleDate"></span>
+        <span id="articleTags"></span>
+      </div>
+    </div>
+    <div class="article-body" id="articleBody"></div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span data-footer>以静态之力，行长期之事。</span>
+    <div class="footer-links" data-social-list></div>
+  </div>
+</footer>
+
+<script src="assets/js/seed.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/blog.js"></script>
+</body>
+</html>
